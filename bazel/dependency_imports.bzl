@@ -34,6 +34,7 @@ def envoy_dependency_imports(go_version = GO_VERSION):
             "wasm32-wasi",
             "x86_64-apple-ios",
             "x86_64-linux-android",
+            "x86_64-linux-unknown",
         ],
     )
     upb_deps()
