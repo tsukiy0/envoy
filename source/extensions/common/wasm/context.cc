@@ -1593,6 +1593,10 @@ WasmResult Context::closeStream(WasmStreamType stream_type) {
 constexpr absl::string_view FailStreamResponseDetails = "wasm_fail_stream";
 
 void Context::failStream(WasmStreamType stream_type) {
+  // @TODO convert FailState to WasmEvent
+  // wasm()->fail_state()
+  wasm()->lifecycle_stats_handler_.onEvent(WasmEvent::RuntimeError);
+
   switch (stream_type) {
   case WasmStreamType::Request:
     if (decoder_callbacks_ && !local_reply_sent_) {

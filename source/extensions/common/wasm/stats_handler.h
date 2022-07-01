@@ -33,7 +33,8 @@ struct CreateWasmStats {
 
 #define LIFECYCLE_STATS(COUNTER, GAUGE)                                                            \
   COUNTER(created)                                                                                 \
-  GAUGE(active, NeverImport)
+  GAUGE(active, NeverImport)                                                                       \
+  COUNTER(runtime_error)
 
 struct LifecycleStats {
   LIFECYCLE_STATS(GENERATE_COUNTER_STRUCT, GENERATE_GAUGE_STRUCT)
