@@ -46,7 +46,7 @@ static_resources:
                   vm_id: "wasm-vm-id"
                   code:
                     local:
-                      filename: "/workspaces/envoy/configs/main.wasm"
+                      filename: "/workspaces/envoy/configs/main_panic.wasm"
           - name: envoy.filters.http.router
             typed_config:
               "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
